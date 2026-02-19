@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHEild AI Dashboard — Your safety control center.">
+    <title>Dashboard — SHEild AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="gradient-bg"></div>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container header-inner">
+            <a href="dashboard.html" class="logo">
+                <div class="logo-icon">🛡️</div>
+                <span>SHE<span class="text-gradient">ild</span></span>
+            </a>
+            <div class="header-actions">
+                <a href="settings.html" class="btn btn-ghost btn-sm">⚙️</a>
+                <a href="settings.html" class="profile-btn" id="profile-icon">U</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-shell">
+        <div class="container">
+
+            <!-- Dashboard Hero -->
+            <div class="dashboard-hero">
+                <!-- Status Badge -->
+                <div id="status-badge" class="status-badge status-safe" style="margin-bottom: var(--space-xl);">
+                    <span class="status-dot"></span>
+                    <span id="status-text">SAFE</span>
+                </div>
+
+                <h1 style="margin-bottom: var(--space-sm);">Safety Dashboard</h1>
+                <p style="color: var(--text-secondary);">You're protected. Stay alert, stay safe.</p>
+
+                <!-- SOS Button -->
+                <div style="margin: var(--space-2xl) 0;">
+                    <button class="sos-btn" id="sos-button" onclick="activateSOS()">
+                        SOS
+                    </button>
+                    <p style="color: var(--text-secondary); margin-top: var(--space-md); font-size: 0.85rem;">
+                        Tap to activate emergency mode
+                    </p>
+                </div>
+
+                <!-- Voice Activation Button (REAL) -->
+                <button class="btn btn-secondary" id="voice-btn" onclick="startVoiceListening()"
+                    style="margin-bottom: var(--space-xl);">
+                    🎙️ Start Voice Listening
+                </button>
+                <p id="voice-status"
+                    style="color:var(--text-secondary); font-size:0.8rem; display:none; margin-top:-10px; margin-bottom: var(--space-md);">
+                </p>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section-title">
+                <h2>Quick Actions</h2>
+            </div>
+
+            <div class="dashboard-actions stagger-children">
+                <div class="glass-card action-card animate-fadeInUp" onclick="fakeCall()">
+                    <div class="action-icon" style="background: rgba(59,130,246,0.15);">📱</div>
+                    <h3>Fake Call</h3>
+                    <p>Simulate an incoming call</p>
+                </div>
+
+                <div class="glass-card action-card animate-fadeInUp" onclick="shareLocation()">
+                    <div class="action-icon" style="background: rgba(34,197,94,0.15);">📍</div>
+                    <h3>Share Location</h3>
+                    <p>Send live GPS to contacts</p>
+                </div>
+
+                <a href="safezones.html" class="glass-card action-card animate-fadeInUp">
+                    <div class="action-icon" style="background: rgba(245,158,11,0.15);">🗺️</div>
+                    <h3>Safe Zones</h3>
+                    <p>Find nearby safe areas</p>
+                </a>
+
+                <a href="contacts.html" class="glass-card action-card animate-fadeInUp">
+                    <div class="action-icon" style="background: rgba(124,58,237,0.15);">📞</div>
+                    <h3>Contacts</h3>
+                    <p>Manage emergency contacts</p>
+                </a>
+
+                <a href="vault.html" class="glass-card action-card animate-fadeInUp">
+                    <div class="action-icon" style="background: rgba(225,29,72,0.15);">📁</div>
+                    <h3>Incident Vault</h3>
+                    <p>View incident history</p>
+                </a>
+
+                <a href="settings.html" class="glass-card action-card animate-fadeInUp">
+                    <div class="action-icon" style="background: rgba(148,163,184,0.15);">⚙️</div>
+                    <h3>Settings</h3>
+                    <p>Customize preferences</p>
+                </a>
+            </div>
+
+            <!-- ── Easy Access Features (No Literacy Needed) ── -->
+            <div class="section-title" style="margin-top: var(--space-2xl);">
+                <h2>🤝 Easy Access</h2>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Simple features — no reading needed</p>
+            </div>
+
+            <div class="dashboard-actions stagger-children">
+                <div class="glass-card action-card animate-fadeInUp" onclick="triggerShakeAlert()">
+                    <div class="action-icon" style="background: rgba(225,29,72,0.15);">📳</div>
+                    <h3>Shake Alert</h3>
+                    <p>Shake phone for SOS</p>
+                </div>
+
+                <div class="glass-card action-card animate-fadeInUp" onclick="activateSiren()">
+                    <div class="action-icon" style="background: rgba(124,58,237,0.15);">🔊</div>
+                    <h3>Siren Alarm</h3>
+                    <p>Play loud alarm siren</p>
+                </div>
+
+                <div class="glass-card action-card animate-fadeInUp" onclick="playAudioGuide()">
+                    <div class="action-icon" style="background: rgba(59,130,246,0.15);">🗣️</div>
+                    <h3>Audio Guide</h3>
+                    <p>Hear voice instructions</p>
+                </div>
+
+                <div class="glass-card action-card animate-fadeInUp" onclick="startEvidenceRecording()">
+                    <div class="action-icon" style="background: rgba(34,197,94,0.15);">🎤</div>
+                    <h3>Record Evidence</h3>
+                    <p>Record audio proof</p>
+                </div>
+            </div>
+
+            <!-- ── Advanced Features (Educated Users) ── -->
+            <div class="section-title" style="margin-top: var(--space-2xl);">
+                <h2>🎓 Advanced Tools</h2>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Analytics, legal help & awareness</p>
+            </div>
+
+            <div class="dashboard-actions stagger-children">
+                <div class="glass-card action-card animate-fadeInUp" onclick="showSafetyScore()">
+                    <div class="action-icon" style="background: rgba(34,197,94,0.15);">🛡️</div>
+                    <h3>Safety Score</h3>
+                    <p>View your safety rating</p>
+                </div>
+
+                <div class="glass-card action-card animate-fadeInUp" onclick="showHelplines()">
+                    <div class="action-icon" style="background: rgba(59,130,246,0.15);">⚖️</div>
+                    <h3>Legal Helplines</h3>
+                    <p>Women's aid & support</p>
+                </div>
+
+                <div class="glass-card action-card animate-fadeInUp" onclick="showSafetyTips()">
+                    <div class="action-icon" style="background: rgba(245,158,11,0.15);">🧠</div>
+                    <h3>Safety Tips</h3>
+                    <p>Self-defense & awareness</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fake Call Modal -->
+    <div class="modal-overlay" id="fake-call-modal">
+        <div class="modal-box" style="text-align:center;">
+            <div style="font-size: 4rem; margin-bottom: var(--space-md); animation: sosPulseRing 1.5s infinite;">📱
+            </div>
+            <h2>Incoming Call...</h2>
+            <p style="color: var(--text-secondary); margin: var(--space-md) 0; font-size: 1.2rem;"
+                id="fake-caller-name">Mom</p>
+            <div style="display:flex; gap:var(--space-md); justify-content:center; margin-top: var(--space-xl);">
+                <button class="btn btn-danger" onclick="closeFakeCall()"
+                    style="border-radius:50%; width:60px; height:60px; font-size:1.5rem;">✕</button>
+                <button class="btn btn-success" onclick="closeFakeCall()"
+                    style="border-radius:50%; width:60px; height:60px; font-size:1.5rem;">📞</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Safety Score Modal -->
+    <div class="modal-overlay" id="safety-score-modal">
+        <div class="modal-box" style="text-align:center;">
+            <div style="font-size: 3rem; margin-bottom: var(--space-md);">🛡️</div>
+            <h2>Your Safety Score</h2>
+            <div id="score-display" style="font-size: 4rem; font-weight: 900; margin: var(--space-lg) 0;"
+                class="text-gradient">—</div>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-md); font-size: 0.9rem;"
+                id="score-breakdown"></p>
+            <div id="score-details"
+                style="text-align:left; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: var(--space-lg);">
+            </div>
+            <button class="btn btn-secondary" onclick="closeModal('safety-score-modal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Legal Helplines Modal -->
+    <div class="modal-overlay" id="helplines-modal">
+        <div class="modal-box" style="text-align:left;">
+            <h2 style="text-align:center; margin-bottom: var(--space-lg);">⚖️ Legal Helplines</h2>
+            <div class="helpline-item">
+                <strong>🚨 Women Helpline (All India)</strong>
+                <p>📞 181 — 24/7 Free Emergency Support</p>
+            </div>
+            <div class="helpline-item">
+                <strong>👮 Police Emergency</strong>
+                <p>📞 100 — Immediate Police Assistance</p>
+            </div>
+            <div class="helpline-item">
+                <strong>🏠 Domestic Violence Helpline</strong>
+                <p>📞 1091 — Support for Abuse Victims</p>
+            </div>
+            <div class="helpline-item">
+                <strong>👧 Childline (For Minors)</strong>
+                <p>📞 1098 — Child Protection Services</p>
+            </div>
+            <div class="helpline-item">
+                <strong>⚖️ National Commission for Women</strong>
+                <p>📞 7827-170-170 — Legal Aid & Counseling</p>
+            </div>
+            <div class="helpline-item">
+                <strong>🆘 Cyber Crime Helpline</strong>
+                <p>📞 1930 — Online Harassment & Fraud</p>
+            </div>
+            <div style="text-align:center; margin-top: var(--space-lg);">
+                <button class="btn btn-secondary" onclick="closeModal('helplines-modal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Safety Tips Modal -->
+    <div class="modal-overlay" id="safety-tips-modal">
+        <div class="modal-box" style="text-align:left; max-width:500px;">
+            <h2 style="text-align:center; margin-bottom: var(--space-lg);">🧠 Safety Tips</h2>
+            <div id="tips-container"></div>
+            <div style="text-align:center; margin-top: var(--space-lg);">
+                <button class="btn btn-outline btn-sm" onclick="loadNewTips()" style="margin-right: var(--space-sm);">🔄
+                    More Tips</button>
+                <button class="btn btn-secondary btn-sm" onclick="closeModal('safety-tips-modal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Evidence Recording Modal -->
+    <div class="modal-overlay" id="evidence-modal">
+        <div class="modal-box" style="text-align:center;">
+            <div style="font-size: 3rem; margin-bottom: var(--space-md);">🎤</div>
+            <h2>Recording Evidence</h2>
+            <div id="evidence-timer"
+                style="font-size: 2.5rem; font-weight: 900; font-family:'Courier New',monospace; margin: var(--space-lg) 0; color: var(--accent);">
+                00:00</div>
+            <div id="evidence-status"
+                style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: var(--space-lg);">Recording
+                audio...</div>
+            <button class="btn btn-danger" onclick="stopEvidenceRecording()" id="evidence-stop-btn">⏹ Stop &
+                Save</button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- FAB (SOS shortcut) -->
+    <a href="javascript:void(0)" class="fab" onclick="activateSOS()" title="SOS">🚨</a>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Emergency Mode Active — SHEild AI is recording evidence and alerting your contacts.">
+    <title>🚨 EMERGENCY — SHEild AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Red Emergency Gradient Background -->
+    <div class="emergency-gradient-bg"></div>
+
+    <div class="emergency-page">
+        <!-- Emergency Title -->
+        <h1 class="emergency-title">🚨 EMERGENCY MODE ACTIVE</h1>
+
+        <!-- Recording Indicator -->
+        <div class="recording-indicator">
+            <span class="rec-dot"></span>
+            <span id="rec-label">REC • Recording in progress</span>
+            <span id="rec-timer"
+                style="margin-left: 8px; font-family: 'Courier New', monospace; font-weight: 700;">00:00</span>
+        </div>
+
+        <!-- REAL Camera Preview -->
+        <div class="camera-preview" id="camera-box" style="overflow:hidden; position:relative;">
+            <video id="camera-feed" autoplay playsinline muted
+                style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0; z-index:0;"></video>
+            <div id="camera-fallback" style="position:relative; z-index:1; text-align:center; display:none;">
+                <div style="font-size: 2rem; margin-bottom: 8px;">📹</div>
+                <span>Camera unavailable — Audio recording active</span>
+            </div>
+        </div>
+
+        <!-- Live GPS (REAL) -->
+        <div class="gps-display" id="gps-display">
+            📍 Acquiring real GPS location...
+        </div>
+
+        <!-- Alert Confirmation -->
+        <div class="alert-confirmation" id="alert-confirm" style="display:none;">
+            ✅ Alert Sent Successfully — Contacts Notified
+        </div>
+
+        <!-- Notified Contacts -->
+        <div class="contacts-notified" id="notified-contacts">
+            <h3>📞 Contacts Notified:</h3>
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Timestamp -->
+        <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: var(--space-md) 0;" id="incident-timestamp">
+        </p>
+
+        <!-- Stop Emergency Button -->
+        <button class="btn btn-outline btn-lg"
+            style="border-color: rgba(255,255,255,0.3); color: var(--white); margin-top: var(--space-lg);"
+            onclick="showStopModal()">
+            🔐 Stop Emergency (PIN Required)
+        </button>
+    </div>
+
+    <!-- PIN Modal -->
+    <div class="modal-overlay" id="pin-modal">
+        <div class="modal-box">
+            <h2>🔐 Enter Security PIN</h2>
+            <p style="color: var(--text-secondary);">Enter your 4-digit PIN to deactivate emergency mode.</p>
+            <input type="password" id="stop-pin-input" class="form-input" placeholder="Enter PIN" maxlength="4"
+                inputmode="numeric" pattern="[0-9]*">
+            <p id="pin-error"
+                style="color: var(--accent); font-size: 0.85rem; display:none; margin-top: var(--space-sm);">Incorrect
+                PIN. Try again.</p>
+            <div style="display:flex; gap:var(--space-md); margin-top: var(--space-lg);">
+                <button class="btn btn-outline" onclick="closeStopModal()">Cancel</button>
+                <button class="btn btn-success" style="flex:1" onclick="stopEmergency()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Popup (simulated notification) -->
+    <div class="toast toast-error" id="toast">🚨 Emergency alert sent to all contacts!</div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

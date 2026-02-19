@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHEild AI Settings — Customize your safety preferences, keyword, PIN, and theme.">
+    <title>Settings — SHEild AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="gradient-bg"></div>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container header-inner">
+            <a href="dashboard.html" class="logo">
+                <div class="logo-icon">🛡️</div>
+                <span>SHE<span class="text-gradient">ild</span></span>
+            </a>
+            <div class="header-actions">
+                <a href="dashboard.html" class="btn btn-ghost btn-sm">← Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-shell">
+        <div class="container" style="max-width: 600px;">
+            <div class="page-title">
+                <h1>⚙️ Settings</h1>
+                <p>Manage your safety preferences and account.</p>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="glass-card-static settings-group">
+                <h3>🔐 Security</h3>
+
+                <div class="form-group">
+                    <label class="form-label" for="settings-keyword">Emergency Keyword</label>
+                    <input type="text" id="settings-keyword" class="form-input" placeholder="Your emergency keyword"
+                        maxlength="30">
+                </div>
+
+                <button class="btn btn-secondary btn-sm" onclick="updateKeyword()">Update Keyword</button>
+
+                <div class="form-group" style="margin-top: var(--space-xl);">
+                    <label class="form-label" for="settings-current-pin">Current PIN</label>
+                    <input type="password" id="settings-current-pin" class="form-input" placeholder="Enter current PIN"
+                        maxlength="4" inputmode="numeric">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="settings-new-pin">New PIN</label>
+                    <input type="password" id="settings-new-pin" class="form-input" placeholder="Enter new 4-digit PIN"
+                        maxlength="4" inputmode="numeric">
+                </div>
+
+                <button class="btn btn-secondary btn-sm" onclick="updatePIN()">Change PIN</button>
+            </div>
+
+            <!-- Appearance Settings -->
+            <div class="glass-card-static settings-group">
+                <h3>🎨 Appearance</h3>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <h4>Dark / Light Mode</h4>
+                        <p>Toggle your preferred theme</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Voice Settings -->
+            <div class="glass-card-static settings-group">
+                <h3>🎙️ Voice Activation</h3>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <h4>Enable Voice Activation</h4>
+                        <p>Simulate listening for your keyword</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="settings-voice-toggle" onchange="updateVoiceSetting()">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="glass-card-static settings-group" style="border-color: rgba(225,29,72,0.3);">
+                <h3 style="color: var(--accent);">⚠️ Danger Zone</h3>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <h4>Reset All Data</h4>
+                        <p>Clear all saved data including contacts, incidents, and settings</p>
+                    </div>
+                    <button class="btn btn-danger btn-sm" onclick="resetAllData()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

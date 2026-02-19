@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find nearby safe zones — police stations, hospitals, and public areas.">
+    <title>Safe Zones — SHEild AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="gradient-bg"></div>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container header-inner">
+            <a href="dashboard.html" class="logo">
+                <div class="logo-icon">🛡️</div>
+                <span>SHE<span class="text-gradient">ild</span></span>
+            </a>
+            <div class="header-actions">
+                <a href="dashboard.html" class="btn btn-ghost btn-sm">← Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-shell">
+        <div class="container">
+            <div class="page-title">
+                <h1>🗺️ Nearby Safe Zones</h1>
+                <p>Simulated nearby safe locations for quick navigation.</p>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="map-placeholder reveal">
+                <span class="map-icon">🗺️</span>
+                <span>Interactive Map View</span>
+                <span style="font-size:0.8rem;">(Map integration placeholder)</span>
+            </div>
+
+            <!-- Safe Zones Grid -->
+            <div class="safezone-grid stagger-children">
+                <!-- Police Stations -->
+                <div class="glass-card safezone-card animate-fadeInUp">
+                    <span class="sz-type sz-police">🚔 Police Station</span>
+                    <h3>Central Police Station</h3>
+                    <p class="sz-address">45 Main Street, City Center, District 1</p>
+                    <p class="sz-distance">📍 0.8 km away • ~3 min drive</p>
+                </div>
+
+                <div class="glass-card safezone-card animate-fadeInUp">
+                    <span class="sz-type sz-police">🚔 Police Station</span>
+                    <h3>Women's Safety Cell</h3>
+                    <p class="sz-address">12 Justice Road, Block B, Sector 5</p>
+                    <p class="sz-distance">📍 1.5 km away • ~6 min drive</p>
+                </div>
+
+                <!-- Hospitals -->
+                <div class="glass-card safezone-card animate-fadeInUp">
+                    <span class="sz-type sz-hospital">🏥 Hospital</span>
+                    <h3>City General Hospital</h3>
+                    <p class="sz-address">78 Healthcare Avenue, Medical Zone</p>
+                    <p class="sz-distance">📍 1.2 km away • ~5 min drive</p>
+                </div>
+
+                <div class="glass-card safezone-card animate-fadeInUp">
+                    <span class="sz-type sz-hospital">🏥 Hospital</span>
+                    <h3>Emergency Care Center</h3>
+                    <p class="sz-address">33 Lifeline Road, Green Park</p>
+                    <p class="sz-distance">📍 2.1 km away • ~8 min drive</p>
+                </div>
+
+                <!-- Public Areas -->
+                <div class="glass-card safezone-card animate-fadeInUp">
+                    <span class="sz-type sz-public">🏛️ Public Area</span>
+                    <h3>Central Metro Station</h3>
+                    <p class="sz-address">Metro Plaza, Junction Circle, Line 2</p>
+                    <p class="sz-distance">📍 0.5 km away • ~2 min walk</p>
+                </div>
+
+                <div class="glass-card safezone-card animate-fadeInUp">
+                    <span class="sz-type sz-public">🏛️ Public Area</span>
+                    <h3>City Mall & Shopping Center</h3>
+                    <p class="sz-address">99 Commerce Street, Downtown</p>
+                    <p class="sz-distance">📍 1.0 km away • ~4 min drive</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAB -->
+    <a href="javascript:void(0)" class="fab" onclick="activateSOS()" title="SOS">🚨</a>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

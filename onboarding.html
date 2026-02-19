@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Set up your SHEild AI safety profile — emergency keyword, security PIN, and voice activation.">
+    <title>Setup — SHEild AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="gradient-bg"></div>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🛡️</div>
+                <span>SHE<span class="text-gradient">ild</span></span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Onboarding -->
+    <div class="page-shell">
+        <div class="onboarding-container">
+            <!-- Step Indicators -->
+            <div class="step-indicators">
+                <div class="step-dot active" data-step="1"></div>
+                <div class="step-dot" data-step="2"></div>
+                <div class="step-dot" data-step="3"></div>
+            </div>
+
+            <!-- Step 1: Emergency Keyword -->
+            <div class="step-panel active" id="step-1">
+                <div class="glass-card-static" style="padding: var(--space-xl);">
+                    <h2>🎙️ Set Emergency Keyword</h2>
+                    <p>Choose a secret keyword that will trigger emergency mode when spoken.</p>
+
+                    <div class="form-group">
+                        <label class="form-label" for="keyword-input">Your Emergency Keyword</label>
+                        <input type="text" id="keyword-input" class="form-input"
+                            placeholder="e.g., Help Me, Shield, Red Alert" maxlength="30">
+                    </div>
+
+                    <div class="step-buttons">
+                        <button class="btn btn-secondary btn-block" onclick="goToStep(2)">
+                            Continue →
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Security PIN -->
+            <div class="step-panel" id="step-2">
+                <div class="glass-card-static" style="padding: var(--space-xl);">
+                    <h2>🔐 Set Security PIN</h2>
+                    <p>Create a 4-digit PIN to stop emergency mode and access your vault.</p>
+
+                    <div class="form-group">
+                        <label class="form-label" for="pin-input">4-Digit PIN</label>
+                        <input type="password" id="pin-input" class="form-input" placeholder="Enter 4-digit PIN"
+                            maxlength="4" inputmode="numeric" pattern="[0-9]*">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="pin-confirm">Confirm PIN</label>
+                        <input type="password" id="pin-confirm" class="form-input" placeholder="Confirm your PIN"
+                            maxlength="4" inputmode="numeric" pattern="[0-9]*">
+                    </div>
+
+                    <div class="step-buttons">
+                        <button class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+                        <button class="btn btn-secondary" style="flex:1" onclick="goToStep(3)">Continue →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Voice Activation Toggle -->
+            <div class="step-panel" id="step-3">
+                <div class="glass-card-static" style="padding: var(--space-xl);">
+                    <h2>🔊 Voice Activation</h2>
+                    <p>Enable voice activation to trigger emergency mode hands-free using your keyword.</p>
+
+                    <div class="setting-item" style="padding: var(--space-lg) 0;">
+                        <div class="setting-info">
+                            <h4>Enable Voice Activation</h4>
+                            <p>Simulates listening for your keyword</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="voice-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="step-buttons">
+                        <button class="btn btn-outline" onclick="goToStep(2)">← Back</button>
+                        <button class="btn btn-success" style="flex:1" onclick="completeOnboarding()">
+                            ✓ Complete Setup
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast toast-error" id="toast"></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

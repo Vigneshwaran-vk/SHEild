@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Incident history vault — view and manage your safety records.">
+    <title>Incident Vault — SHEild AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="gradient-bg"></div>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container header-inner">
+            <a href="dashboard.html" class="logo">
+                <div class="logo-icon">🛡️</div>
+                <span>SHE<span class="text-gradient">ild</span></span>
+            </a>
+            <div class="header-actions">
+                <a href="dashboard.html" class="btn btn-ghost btn-sm">← Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-shell">
+        <div class="container">
+            <div class="page-title"
+                style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap: var(--space-md);">
+                <div>
+                    <h1>📁 Incident Vault</h1>
+                    <p>Your safety incident history log.</p>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="downloadReport()">
+                    📥 Download Report
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="vault-filters">
+                <button class="filter-btn active" onclick="filterIncidents('all', this)">All</button>
+                <button class="filter-btn" onclick="filterIncidents('today', this)">Today</button>
+                <button class="filter-btn" onclick="filterIncidents('week', this)">This Week</button>
+            </div>
+
+            <!-- Incidents List -->
+            <div id="incidents-list"></div>
+
+            <!-- Empty State -->
+            <div class="glass-card-static text-center" style="padding: var(--space-2xl); display:none;"
+                id="vault-empty">
+                <div style="font-size: 3rem; margin-bottom: var(--space-md);">🔒</div>
+                <h3>No Incidents Recorded</h3>
+                <p style="color: var(--text-secondary);">Your safety history will appear here when incidents are logged.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- FAB -->
+    <a href="javascript:void(0)" class="fab" onclick="activateSOS()" title="SOS">🚨</a>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
