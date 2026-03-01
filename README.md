@@ -23,27 +23,6 @@ It is built using pure HTML, CSS, and JavaScript with PWA support, making it ins
 🌐 Offline support using Service Worker
 
 
-**🏗️ Project Structure**
-SHEild/
-│
-├── index.html              # Entry point
-├── onboarding.html         # First-time user guide
-├── dashboard.html          # Main dashboard
-├── emergency.html          # Emergency features
-├── safezones.html          # Safe zone display
-├── contacts.html           # Emergency contacts
-├── vault.html              # Secure information storage
-├── settings.html           # App settings
-│
-├── css/                    # Stylesheets
-├── js/                     # JavaScript logic
-│
-├── manifest.json           # PWA configuration
-├── service-worker.js       # Offline support
-├── icon-192.png
-├── icon-512.png
-└── README.md
-
 **🚀 How to Run the Project**
 
 **Clone the repository:**
